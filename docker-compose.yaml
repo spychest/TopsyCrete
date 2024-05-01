@@ -1,0 +1,44 @@
+version: '3'
+
+services:
+  db-lindsay:
+    image: mariadb:10.11.2
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: 'db'
+      # So you don't have to use root, but you can if you like
+      MYSQL_USER: 'user'
+      # You can use whatever password you like
+      MYSQL_PASSWORD: '5tFVhWatJXfxvrBwJtJ'
+      # Password for root access
+      MYSQL_ROOT_PASSWORD: '5tFVhWatJXfxvrBwJtJ'
+    ports:
+      # <Port exposed> : < MySQL Port running inside container>
+      - '3308:3306'
+    expose:
+      # Opens port 3306 on the container
+      - '3306'
+      # Where our data will be persisted
+    volumes:
+      - my-db-lindsay:/var/lib/mysql
+  # Names our volume
+
+  webserver-lindsay:
+    image: nginx:mainline-alpine
+    container_name: webserver-lindsay
+    working_dir: /application
+    volumes:
+      - .:/application:rw
+      - ./phpdocker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - "84:80"
+
+  lindsay-php-fpm:
+    image: bitnami/php-fpm:8.2.4
+    container_name: lindsay-php-fpm
+    working_dir: /application
+    volumes:
+      - .:/application
+
+volumes:
+  my-db-lindsay:

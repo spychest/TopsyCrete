@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1 class="siteTitle">Un message pour Lindsay?</h1>
+    {% for message in app.session.flashbag.get('error') %}
+        <div class="error-message">Error: {{ message }}</div>
+    {% endfor %}
+    <form class="sender" action="{{ path('registerMessage') }}" method="POST">
+        <input type="text" name="pseudo" id="name" placeholder="Pseudo" autocomplete="off" required>
+        <textarea name="content" id="content" placeholder="Votre message" autocomplete="off" required></textarea>
+        <input type="submit" value="Enregistrer">
+    </form>
+{% endblock %}

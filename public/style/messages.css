@@ -10,29 +10,30 @@
     box-sizing: border-box;
     color: var(--white);
 }
-    .msg:before{
-        content: "";
-        display: block;
-        position: absolute;
-        left: -20px;
-        top: 0;
-        width: 20px;
-        height: 20px;
-        clip-path: polygon(0 0, 100% 0, 100% 100%);
-        background-color: var(--blue);
-    }
+
+.msg:before{
+    content: "";
+    display: block;
+    position: absolute;
+    left: -20px;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    clip-path: polygon(0 0, 100% 0, 100% 100%);
+    background-color: var(--blue);
+}
 
 .msg:nth-of-type(even){
     margin: 0 40px 0 calc(40% - 40px);
     border-radius: 25px 0 25px 25px;
     background-color: var(--pink);
 }
+
 .msg:nth-of-type(even):before{
     left: auto; right: -20px;
     clip-path: polygon(0 0, 100% 0, 0 100%);
     background-color: var(--pink);
 }
-
 .msg+.msg{margin-top: 20px;}
 
 .sender{

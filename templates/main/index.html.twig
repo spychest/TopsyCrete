@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1 class="siteTitle">Bon anniversaire!</h1>
+    {% for message in messages %}
+        <article class="msg">
+            <h2 class="sender">{{ message.sender }}</h2>
+            <p class="content">{{ message.content }}</p>
+        </article>
+    {% endfor %}
+{% endblock %}
