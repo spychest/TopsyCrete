@@ -1,0 +1,60 @@
+@import url(root.css);
+
+.msg{
+    position: relative;
+    width: 60%;
+    background-color: var(--blue);
+    padding: 20px;
+    border-radius: 0 25px 25px 25px;
+    margin: 0 calc(40% - 40px) 0 40px;
+    box-sizing: border-box;
+    color: var(--white);
+}
+    .msg:before{
+        content: "";
+        display: block;
+        position: absolute;
+        left: -20px;
+        top: 0;
+        width: 20px;
+        height: 20px;
+        clip-path: polygon(0 0, 100% 0, 100% 100%);
+        background-color: var(--blue);
+    }
+
+.msg:nth-of-type(even){
+    margin: 0 40px 0 calc(40% - 40px);
+    border-radius: 25px 0 25px 25px;
+    background-color: var(--pink);
+}
+.msg:nth-of-type(even):before{
+    left: auto; right: -20px;
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+    background-color: var(--pink);
+}
+
+.msg+.msg{margin-top: 20px;}
+
+.sender{
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+}
+
+.content{
+    padding-top: 10px;
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+@media screen and (max-width: 1024px) {
+    .msg{
+        width: calc(100% - 80px);
+        margin: 0 40px;
+    }
+    .msg:nth-of-type(even){
+        margin: 0 40px;
+    }
+    .msg+.msg{margin-top: 20px;}
+}

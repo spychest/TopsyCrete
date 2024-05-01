@@ -1,0 +1,67 @@
+@import url(root.css);
+
+.sender{
+    position: relative;
+    width: 70%;
+    margin: 0 15%;
+    padding: 20px;
+    border-radius: 25px;
+    background-color: var(--pink);
+    box-sizing: border-box;
+    font-size: 1.2rem;
+}
+
+#name{
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 0.25rem 0.5rem;
+    color: var(--white);
+    border: none;
+    border-bottom: 2px solid transparent;
+    background: none;
+    box-sizing: border-box;
+}
+#name:focus{
+    outline: none;
+    border-bottom: 2px solid var(--white);
+}
+
+#content{
+    display: inline-block;
+    width: 100%;
+    min-height: 8rem;
+    padding: 0.25rem 0.5rem;
+    color: var(--black);
+    border: 1px solid var(--white);
+    background-color: var(--white-50);
+    box-sizing: border-box;
+}
+#content:focus{
+    outline: none;
+    border: 1px solid var(--blue);
+}
+
+.sender>input[type=submit]{
+    width: 30%;
+    margin: 10px 35%;
+    padding: 0.5rem 0.25rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: var(--white);
+    color: var(--pink);
+    border: none;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.sender>input[type=submit]:hover{
+    background-color: var(--black);
+    color: var(--white);
+}
+
+@media screen and (max-width: 1024px) {
+    .sender{
+        width: calc(100% - 3rem);
+        margin: 0 1.5rem;
+    }
+}
