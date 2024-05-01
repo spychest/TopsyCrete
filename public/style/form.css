@@ -1,4 +1,70 @@
-.sendForm{
+form > button {
+    width: 30%;
+    margin: 10px 35%;
+    padding: 0.5rem 0.25rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: var(--white);
+    color: var(--black);
+    border: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+form > button:hover {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+.form-group+.form-group {
+    margin-top: 20px;
+}
+.form-group > label {
+    color: var(--white);
+    font-size: 1.3rem;
+    padding-bottom: 0.2rem;
+}
+.form-group > input {
+    font-size: 1.3rem;
+    background: none;
+    border: none;
+    border-bottom: solid 2px var(--white-50);
+    color: var(--white);
+    padding: 0.2rem 0;
+}
+.form-group > input::placeholder {
+    color: var(--white);
+}
+.form-group > input:focus {
+    outline: none;
+    border-bottom: 2px solid var(--white);
+}
+.form-group > textarea {
+    font-size: 1.3rem;
+    padding: 0.5rem;
+    background: none;
+    border: solid 1px var(--white-50);
+    color: var(--white);
+    resize: vertical;
+}
+.form-group > textarea::placeholder {
+    color: var(--white);
+}
+.form-group > textarea:focus {
+    outline: none;
+    border: solid 1px var(--white);
+}
+.form-group > small {
+    padding: 0.25rem 0;
+    color: var(--white-50);
+}
+
+.send-form {
     position: relative;
     width: 70%;
     margin: 0 15%;
@@ -6,65 +72,28 @@
     border-radius: 25px;
     background-color: var(--pink);
     box-sizing: border-box;
-    font-size: 1.2rem;
 }
 
-#name{
-    display: inline-block;
-    width: 100%;
-    margin-bottom: 20px;
-    padding: 0.25rem 0.5rem;
-    color: var(--white);
-    border: none;
-    border-bottom: 2px solid transparent;
-    background: none;
-    box-sizing: border-box;
-}
-#name::placeholder{
-    color: var(--white-50);
-}
-#name:focus{
-    outline: none;
-    border-bottom: 2px solid var(--white);
-}
-
-#content{
-    display: inline-block;
-    width: 100%;
-    min-height: 8rem;
-    padding: 0.25rem 0.5rem;
-    color: var(--black);
-    border: 1px solid var(--white);
-    background-color: var(--white-50);
-    box-sizing: border-box;
-}
-#content::placeholder{
-    color: var(--white-50);
-}
-#content:focus{
-    outline: none;
-    border: 1px solid var(--blue);
-}
-
-.sendForm>input[type=submit]{
-    width: 30%;
-    margin: 10px 35%;
-    padding: 0.5rem 0.25rem;
-    font-size: 1.2rem;
-    font-weight: bold;
-    background-color: var(--white);
+.send-form button {
     color: var(--pink);
-    border: none;
-    text-transform: uppercase;
-    cursor: pointer;
 }
-.sendForm>input[type=submit]:hover{
-    background-color: var(--black);
-    color: var(--white);
+
+.login-form {
+    position: relative;
+    width: 30%;
+    margin: 0 35%;
+    padding: 20px;
+    border-radius: 25px;
+    background-color: var(--blue);
+    box-sizing: border-box;
+}
+
+.login-form button {
+    color: var(--blue);
 }
 
 @media screen and (max-width: 1024px) {
-    .sendForm{
+    .send-form, .login-form {
         width: calc(100% - 3rem);
         margin: 0 1.5rem;
     }
