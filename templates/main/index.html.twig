@@ -2,10 +2,21 @@
 
 {% block body %}
     <h1 class="siteTitle">Bon anniversaire!</h1>
-    {% for message in messages %}
-        <article class="msg">
-            <h2 class="sender">{{ message.sender }}</h2>
-            <p class="content">{{ message.content }}</p>
-        </article>
+    {% for message in app.session.flashbag.get('error') %}
+        <div class="error-message">Error: {{ message }}</div>
     {% endfor %}
+    {% for message in app.session.flashbag.get('success') %}
+        <div class="success-message">{{ message }}</div>
+    {% endfor %}
+    <div class="login-form">
+        <form action="{{ path('showMessage') }}" method="POST">
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input id="password" name="password" type="password" autocomplete="off" required>
+                <small>Demander le password a Spychest</small>
+            </div>
+            <button type="submit">Valider</button>
+        </form>
+    </div>
+
 {% endblock %}
