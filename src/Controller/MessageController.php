@@ -57,6 +57,6 @@ class MessageController extends AbstractController
             return $this->redirectToRoute('sendMessage');
         }
         $this->addFlash('success', 'Votre message à bien été ajouté. Merci !');
-        return $this->redirectToRoute('index');
+        return $this->redirectToRoute('sendMessage');
     }
 }
