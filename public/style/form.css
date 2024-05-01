@@ -1,6 +1,4 @@
-@import url(root.css);
-
-.sender{
+.sendForm{
     position: relative;
     width: 70%;
     margin: 0 15%;
@@ -22,6 +20,9 @@
     background: none;
     box-sizing: border-box;
 }
+#name::placeholder{
+    color: var(--white-50);
+}
 #name:focus{
     outline: none;
     border-bottom: 2px solid var(--white);
@@ -37,12 +38,15 @@
     background-color: var(--white-50);
     box-sizing: border-box;
 }
+#content::placeholder{
+    color: var(--white-50);
+}
 #content:focus{
     outline: none;
     border: 1px solid var(--blue);
 }
 
-.sender>input[type=submit]{
+.sendForm>input[type=submit]{
     width: 30%;
     margin: 10px 35%;
     padding: 0.5rem 0.25rem;
@@ -54,13 +58,13 @@
     text-transform: uppercase;
     cursor: pointer;
 }
-.sender>input[type=submit]:hover{
+.sendForm>input[type=submit]:hover{
     background-color: var(--black);
     color: var(--white);
 }
 
 @media screen and (max-width: 1024px) {
-    .sender{
+    .sendForm{
         width: calc(100% - 3rem);
         margin: 0 1.5rem;
     }
