@@ -5,7 +5,7 @@
     {% for message in messages %}
         <article class="msg">
             <h2 class="sender">{{ message.sender }}</h2>
-            <p class="content">{{ message.content }}</p>
+            <p class="content">{{ message.content | nl2br}}</p>
         </article>
     {% endfor %}
 {% endblock %}
