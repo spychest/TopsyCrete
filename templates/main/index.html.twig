@@ -13,10 +13,9 @@
             <div class="form-group">
                 <label for="password">Password</label>
                 <input id="password" name="password" type="password" autocomplete="off" required>
-                <small>Demander le password à Lindsay</small>
+                <small>Demander le password à {{ app.request.server.get('PROJECT_MANAGER') }}</small>
             </div>
             <button type="submit">Valider</button>
         </form>
     </div>
-
 {% endblock %}

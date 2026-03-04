@@ -1,8 +1,8 @@
 version: '3'
 
 services:
-  db-lindsay:
-    image: mariadb:10.11.2
+  db:
+    image: mariadb
     restart: unless-stopped
     environment:
       MYSQL_DATABASE: 'db'
@@ -11,9 +11,9 @@ services:
       # You can use whatever password you like
       MYSQL_PASSWORD: ${PASSWORD}
       # Password for root access
-      MYSQL_ROOT_PASSWORD: ${ROOT_PASSWORD}
+      MARIADB_ROOT_PASSWORD: ${ROOT_PASSWORD}
     ports:
-      # <Port exposed> : < MySQL Port running inside container>
+      # <Port exposed>: < MySQL Port running inside container>
       - '3308:3306'
     expose:
       # Opens port 3306 on the container
@@ -34,7 +34,7 @@ services:
       - "84:80"
 
   lindsay-php-fpm:
-    image: bitnami/php-fpm:8.2.4
+    image: bitnami/php-fpm
     container_name: lindsay-php-fpm
     working_dir: /application
     volumes:
